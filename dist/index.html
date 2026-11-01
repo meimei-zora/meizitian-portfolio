@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f0e6">
+  <meta name="description" content="梅子甜的个人作品集。服装设计、三维模拟、商品企划与业务跟进，看看我做过的作品和实践。">
+  <title>梅子甜 · 个人作品集</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="content.js"></script>
+  <script defer src="app.js"></script>
+  <script defer src="swarm-cursor.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#abilities">跳到能力分类</a>
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="梅子甜，返回首页顶部">梅子甜<span aria-hidden="true">✳</span></a>
+    <nav aria-label="主导航">
+      <a href="#abilities">能力分类</a>
+      <a href="#about">关于我</a>
+      <a href="#contact">联系<span aria-hidden="true"> ↗</span></a>
+    </nav>
+    <span class="header-note" aria-hidden="true">A LITTLE ABOUT MY WORK</span>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="梅子甜的个人作品集开场">
+      <div class="hero-frame">
+        <video id="intro-video" muted playsinline preload="auto" aria-label="四秒作品集开场视频"></video>
+        <div class="hero-identity"><h1 data-heading="梅子甜">梅子甜</h1><p data-heading="个人作品集">个人作品集</p></div>
+        <div id="video-missing" class="video-missing" hidden><p>开场视频待补充</p></div>
+        <button class="video-control" id="video-toggle" type="button" aria-label="播放开场视频"><span id="video-icon" aria-hidden="true">▷</span><span id="video-label">播放</span></button>
+      </div>
+      <a class="scroll-cue" href="#abilities"><span>慢慢往下，打开看看</span><span class="arrow-down" aria-hidden="true">↓</span><small>AI辅助开场影像</small></a>
+    </section>
+
+    <section class="abilities section-wrap" id="abilities" aria-labelledby="abilities-title">
+      <div class="section-heading">
+        <div><p class="eyebrow"><span class="section-index">01</span></p><h2 id="abilities-title" data-heading="能力分类">能力分类<span class="small-star" aria-hidden="true">✳</span></h2></div>
+        <p class="section-note">这里有设计、制作，也有业务跟进。<br>点开文件夹，看看我具体做过什么。</p>
+      </div>
+      <div class="folder-stage" id="folder-stage" aria-label="能力文件夹展示区">
+        <div class="stage-intro" id="stage-intro" aria-hidden="true"><span class="intro-star">✳</span><p>我做过的事，<br>都放在这些文件夹里。</p><span class="intro-note">DESIGN, MAKING & EVERYDAY PRACTICE</span></div>
+        <div class="fan-cards" id="fan-cards" role="group" aria-label="二级能力分类"></div>
+        <div class="folder-row" id="folder-row"></div>
+        <span class="stage-corner" aria-hidden="true">OPEN A FOLDER / TAKE A LOOK</span>
+      </div>
+      <p id="folder-status" class="folder-status" role="status" aria-live="polite">选一个文件夹，看看相关作品。</p>
+      <section class="project-index" id="project-index" aria-labelledby="project-index-title" hidden></section>
+    </section>
+
+    <section class="about section-wrap" id="about" aria-labelledby="honors-title">
+      <div class="section-heading"><div><p class="eyebrow"><span class="section-index">02</span></p><h2 id="honors-title" data-heading="获奖与荣誉">获奖与荣誉</h2></div><span class="margin-mark" aria-hidden="true">学习中的一些记录。</span></div>
+      <div id="honors-content"></div>
+    </section>
+
+    <section class="skills section-wrap" id="skills" aria-labelledby="skills-title">
+      <div class="section-heading"><div><p class="eyebrow"><span class="section-index">03</span></p><h2 id="skills-title" data-heading="技能">技能</h2></div><p class="section-note">在课程、练习和实际业务中用到的技能。</p></div>
+      <div class="skill-groups" id="skill-groups"></div>
+    </section>
+
+    <section class="contact section-wrap" id="contact" aria-labelledby="contact-title">
+      <div class="contact-top"><p class="eyebrow"><span class="section-index">04</span></p><span class="contact-star" aria-hidden="true">✳</span></div>
+      <h2 id="contact-title" data-heading="联系我">联系我<span aria-hidden="true">↗</span></h2>
+      <div class="contact-bottom"><p class="contact-name">梅子甜</p><div id="contact-content"></div></div>
+      <img class="contact-portrait" id="contact-portrait" alt="" loading="lazy" decoding="async" hidden>
+    </section>
+  </main>
+  <footer class="site-footer section-wrap"><span>梅子甜 · 个人作品集</span><span>谢谢你看到这里。</span><a href="#top">回到顶部 ↑</a></footer>
+
+  <dialog class="detail-dialog" id="detail-dialog" aria-labelledby="detail-title">
+    <button class="close-button" id="detail-close" type="button" aria-label="关闭作品详情"><span aria-hidden="true">×</span></button>
+    <article id="detail-content"></article>
+  </dialog>
+  <dialog class="image-dialog" id="image-dialog" aria-label="全屏图片查看器">
+    <div class="image-toolbar"><p id="image-count"></p><div><button id="image-zoom" type="button" aria-label="放大图片">放大 ＋</button><button id="image-close" type="button" aria-label="关闭图片查看器">关闭 ×</button></div></div>
+    <div class="image-canvas" id="image-canvas"><img id="viewer-image" alt=""></div>
+    <button class="image-prev" id="image-prev" type="button" aria-label="上一张图片">←</button><button class="image-next" id="image-next" type="button" aria-label="下一张图片">→</button>
+    <p class="image-caption" id="image-caption"></p>
+  </dialog>
+</body>
+</html>
